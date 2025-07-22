@@ -137,3 +137,101 @@ div.equal:hover {
 div.equal:active {
   font-weight: bold;
 }
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+  .calculator {
+    width: 95%;
+    max-width: 350px;
+    margin: 20px auto;
+  }
+  
+  .input {
+    font-size: 2rem;
+    padding: 20px;
+    min-height: 60px;
+  }
+  
+  .operators div,
+  .numbers div,
+  div.equal {
+    width: 60px;
+    height: 60px;
+    padding: 15px 5px;
+    margin: 5px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .operators {
+    grid-gap: 5px;
+  }
+  
+  .bottom-section {
+    gap: 5px;
+  }
+  
+  .numbers div {
+    margin: 5px;
+  }
+  
+  div.equal {
+    margin: 5px;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .calculator {
+    width: 98%;
+    margin: 10px auto;
+  }
+  
+  .operators div,
+  .numbers div,
+  div.equal {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+    padding: 10px 2px;
+  }
+  
+  .input {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+}
+
+/* Touch-friendly improvements */
+.operators div,
+.numbers div,
+div.equal {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Prevent zoom on input focus (iOS) */
+input, textarea, select {
+  font-size: 16px;
+}
+
+/* Landscape orientation for mobile */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .calculator {
+    width: 80%;
+    max-width: 500px;
+  }
+  
+  .operators div,
+  .numbers div,
+  div.equal {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+}
