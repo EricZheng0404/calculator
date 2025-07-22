@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
         buttonText === "÷"
       ) {
         number = showNumber.textContent;
-        number1 = parseInt(number);
+        number1 = parseFloat(number);
         operator = buttonText;
         showNumber.textContent = "";
         
       } else if (buttonText === "=") { // equal 
-        number2 = parseInt(showNumber.textContent);
+        number2 = parseFloat(showNumber.textContent);
         operate(operator);
         showNumber.textContent = result;
       } else { // number button
