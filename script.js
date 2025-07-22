@@ -57,6 +57,10 @@ function operate(operation) {
   } else if (operation === "×") {
     result = num1 * number2;
   } else if (operation === "÷") {
+    if (number2 === 0) {
+      result = "Error";
+      return;
+    }
     result = num1 / number2;
   }
 }
