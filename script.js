@@ -21,15 +21,25 @@ document.addEventListener("DOMContentLoaded", function () {
         buttonText === "÷"
       ) {
         number = showNumber.textContent;
-        number1 = parseFloat(number);
         operator = buttonText;
+        if (number1 === null) {
+          number1 = parseFloat(number);
+        } else {
+          number2 = parseFloat(number);
+          operate(operator);
+          showNumber.textContent = result;
+        }
         showNumber.textContent = "";
-        
       } else if (buttonText === "=") { // equal 
         number2 = parseFloat(showNumber.textContent);
         operate(operator);
         showNumber.textContent = result;
+        
       } else { // number button
+        // If result is being shown and user hits a number, clear first
+        if (showNumber.textContent == result && result !== null) {
+          clear();
+        }
         show(buttonText);
       }
     });
